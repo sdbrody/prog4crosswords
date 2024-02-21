@@ -1,0 +1,5 @@
+ https://www.amazon.com/Data-Science-Command-Line-Explore-dp-1492087912/dp/1492087912/ref=dp_ob_title_bk
+chapters 2 and 5
+
+further python scripts:
+https://www.xwordinfo.com/Python
