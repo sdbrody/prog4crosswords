@@ -18,5 +18,15 @@ The home directory is usually also the one shown when you open your computer's f
 You might find it useful to open it and compare what you see there with what you see with the `ls -l` command.  
 
 
+### 
+cd, mkdir, rm (use manager)
 
+###
+cat, echo, head, tail, less, nano
+; and ()
+
+###
+standard in/out, pipe and redirect
+
+### tr, grep and sed
  
