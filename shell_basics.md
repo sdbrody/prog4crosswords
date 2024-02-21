@@ -1,6 +1,5 @@
 ## File System Navigation
-As mentioned, one of the primary purposes of the shell is dealing with files.
-The first step is to learn the commands that will help navigate the file system.
+As mentioned, one of the primary purposes of the shell is dealing with files, so our first step is to learn the commands that will help navigate the file system.
 
 ### Orientation - the home directory
 As mentioned earlier, the directory you are currently in is shown in the command prompt, between the colon and the **$** sign.
