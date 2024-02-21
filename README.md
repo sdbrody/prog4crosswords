@@ -12,6 +12,7 @@ The tutorial assumes you have access to a linux-like shell and have Python insta
 On a Windows machine, you can get the prerequisites by installing WSL (Windows Subsystem for Linux). To do so, open the Powershell program, and type `wsl --install`. Once installed, you can run the WSL program or open Powershell and type `wsl` to get you to the linux shell. On a Mac or Linux computer, open the Terminal program.  
 
 Whatever system you use, you should see something like this:
+![Shell prompt](imgs/shell_prompt.png)
 
 
 To check for Python, enter `python3 --version`. If it prints out a version number, you are good to go.
