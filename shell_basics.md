@@ -24,8 +24,10 @@ You can type `ls` again to list any files and subdirectories. To move one step b
 
 You can also specify a full path as an argument to `cd`. For example, if you entered the command `cd Downloads`, and then wanted to go to a different (sibling) subdirectory in your home directory named `Docs`, you could enter `cd ..` and then `cd Docs`, or `cd ../Docs` or `cd ~/Docs`.
 
+> 📖 Further Reading: [relative vs. absolute paths](https://linuxhandbook.com/absolute-vs-relative-path/)
 
-cd, mkdir, rm (use manager)
+### Creating and Deleting Files and Directories
+Since this is a tutorial for beginners, I will skip the topic of creating and deleting directories from the shell. This can be done easily and more safely from the graphical file manager. The shell lacks many of the safeguards of the graphical file managers (for example the notion of a "Trash Bin" that allows recovery in case of accidental deletion).
 
 ###
 cat, echo, head, tail, less, nano
