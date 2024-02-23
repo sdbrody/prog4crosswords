@@ -35,6 +35,18 @@ Since this is a tutorial for beginners, I will skip the topic of deleting files 
 
 ### Reading and Writing Text Files
 
+### Ctrl-C and Ctrl-X
+
+#### cat: print out text file(s)
+To print out text files, use the `cat` command followed by a list of the file names (or just a single file). `cat` is short for "contcatinate", since it will print out the contents of the files, in order, joined together.
+
+#### echo: print a piece of text (string)
+The `echo` command, followed by a list of strings will simply print those words to the screen. Since some characters (e.g., **;**, **(**, **)**, **-**) have special meaning, as we will see in the next section, it's good practice to put your desired output inside double quotes. For example `echo "What's your name?"` will print correctly, whereas `echo What's your name?` will not.
+
+There are many subtlties 
+
+
+
 cat, echo, head, tail, less, nano
 ; and ()
 
