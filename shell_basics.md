@@ -27,14 +27,18 @@ You can also specify a full path as an argument to `cd`. For example, if you ent
 > 📖 Further Reading: [relative vs. absolute paths](https://linuxhandbook.com/absolute-vs-relative-path/)
 
 ### Creating and Deleting Files and Directories
-Since this is a tutorial for beginners, I will skip the topic of creating and deleting directories from the shell. This can be done easily and more safely from the graphical file manager. The shell lacks many of the safeguards of the graphical file managers (for example the notion of a "Trash Bin" that allows recovery in case of accidental deletion).
+To make a new directory under the current one, enter `mkdir` followed by the desired name. You can also specify a relative or absolute path as the argument, however, the parent directory for the new one you are creating has to already exist. 
 
-###
+Since this is a tutorial for beginners, I will skip the topic of deleting files and directories from the shell. This can be done easily and more safely from the graphical file manager, which has safeguards and recovery features.
+
+> ⚠️ 📖 Further Reading: [rm and rmdir](https://www.hostinger.com/tutorials/how-to-remove-files-and-folders-using-linux-command-line) ⚠️
+
+### Reading and Writing Text Files
+
 cat, echo, head, tail, less, nano
 ; and ()
 
-###
-standard in/out, pipe and redirect
+### Standard Input and Output, Pipes and Redirection
 
-### tr, grep and sed
- 
+
+### Searching for and Editing Patterns
