@@ -35,7 +35,7 @@ Since this is a tutorial for beginners, I will skip the topic of deleting files 
 
 ### Reading and Writing Text Files
 
-### Ctrl-C
+### Ctrl-c
 If you run a command or program, and it misbehaves (e.g., is taking way too long, gets stuck in a loop, is dumping too much text to the screen), you can try to stop it by hitting the `ctrl-c` key combination. If this does not work, closing the shell window will usually kill any programs you ran from it.
 
 #### cat: print out text file(s)
