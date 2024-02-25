@@ -35,7 +35,8 @@ Since this is a tutorial for beginners, I will skip the topic of deleting files 
 
 ### Reading and Writing Text Files
 
-### Ctrl-C and Ctrl-X
+### Ctrl-C
+If you run a command or program, and it misbehaves (e.g., is taking way too long, gets stuck in a loop, is dumping too much text to the screen), you can try to stop it by hitting the `ctrl-c` key combination. If this does not work, closing the shell window will usually kill any programs you ran from it.
 
 #### cat: print out text file(s)
 To print out text files, use the `cat` command followed by a list of the file names (or just a single file). `cat` is short for "contcatinate", since it will print out the contents of the files, in order, joined together.
@@ -43,9 +44,22 @@ To print out text files, use the `cat` command followed by a list of the file na
 #### echo: print a piece of text (string)
 The `echo` command, followed by a list of strings will simply print those words to the screen. Since some characters (e.g., **;**, **(**, **)**, **-**) have special meaning, as we will see in the next section, it's good practice to put your desired output inside double quotes. For example `echo "What's your name?"` will print correctly, whereas `echo What's your name?` will not.
 
-There are many subtlties 
+If you need to print a double quote, you can precede it by a backslash (**\**). This is called "escaping".
 
+For example `echo "I like \"Alice in Wonderland\""`. 
 
+Two useful characters you might want to print are tabs and new-line. These are represented by `\t` and `\n` respectively. To use them in this way (instead of just printing the backslash and letter), use the `-e` argument.
+
+For example: `echo -e "name\tuser id\nSam\tsdbrody"`.
+
+Echo has many options for formatting the text, printing variables, etc. For this purpose, it uses a wide range of special characters, most noteablly **$**, **\\**, and **"**. If you try to print a piece of text but don't get the result you want, it may be because it contains a special character. Try "escaping" any non-alphanumeric characters by putting a backslash before them.
+
+Remember, if you don't get the behavior you expect and end up stuck, you can use `ctrl-c` to break out of the program/command you ran.  
+
+> 📖 Further Reading: echo tutorials: [1](https://earthly.dev/blog/practical-guide-to-linux-echo-cmd/) [2](https://linuxhint.com/bash_echo/)
+
+#### head and tail
+`head -123 filename` will print out the first 123 (or whatever number you specify) lines of the file `filename`. `tail -123 filename` will print the last 123 lines.  
 
 cat, echo, head, tail, less, nano
 ; and ()
@@ -54,3 +68,4 @@ cat, echo, head, tail, less, nano
 
 
 ### Searching for and Editing Patterns
+tr, sort, cut, grep, sed, 
