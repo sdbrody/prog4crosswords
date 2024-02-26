@@ -26,7 +26,15 @@ You can also specify a full path as an argument to `cd`. For example, if you ent
 
 > 📖 Further Reading: [relative vs. absolute paths](https://linuxhandbook.com/absolute-vs-relative-path/)
 
-### Creating and Deleting Files and Directories
+### Copying, Creating and Deleting Files and Directories
+To copy a file, use `cp source_file_name destination_name`.
+
+⚠️ Make sure the destination file doesn't exist, or you will overwrite it! ⚠️
+
+If the destination you specified is a directory, the file will be copied (with the same name) into that directory. If you want to copy a directory and all its contents, use the `-r` (recursive) option. For example: `cp -r my_docs_dir my_docs_backup_dir`.
+
+To move or rename a file or directory, use `mv source_name destination_name`. The same logic as above applies: if the destination is an existing directory, the source will be moved _into_ it. If it is an existing file, it will be _overwritten_!
+
 To make a new directory under the current one, enter `mkdir` followed by the desired name. You can also specify a relative or absolute path as the argument, however, the parent directory for the new one you are creating has to already exist. 
 
 Since this is a tutorial for beginners, I will skip the topic of deleting files and directories from the shell. This can be done easily and more safely from the graphical file manager, which has safeguards and recovery features.
@@ -38,10 +46,10 @@ Since this is a tutorial for beginners, I will skip the topic of deleting files 
 ### Ctrl-c
 If you run a command or program, and it misbehaves (e.g., is taking way too long, gets stuck in a loop, is dumping too much text to the screen), you can try to stop it by hitting the `ctrl-c` key combination. If this does not work, closing the shell window will usually kill any programs you ran from it.
 
-#### cat: print out text file(s)
+##### `cat`: print out text file(s)
 To print out text files, use the `cat` command followed by a list of the file names (or just a single file). `cat` is short for "contcatinate", since it will print out the contents of the files, in order, joined together.
 
-#### echo: print a piece of text (string)
+##### `echo`: print a piece of text (string)
 The `echo` command, followed by a list of strings will simply print those words to the screen. Since some characters (e.g., **;**, **(**, **)**, **-**) have special meaning, as we will see in the next section, it's good practice to put your desired output inside double quotes. For example `echo "What's your name?"` will print correctly, whereas `echo What's your name?` will not.
 
 If you need to print a double quote, you can precede it by a backslash (**\**). This is called "escaping".
@@ -58,14 +66,18 @@ Remember, if you don't get the behavior you expect and end up stuck, you can use
 
 > 📖 Further Reading: echo tutorials: [1](https://earthly.dev/blog/practical-guide-to-linux-echo-cmd/) [2](https://linuxhint.com/bash_echo/)
 
-#### head and tail
+##### `head`/`tail`: print the first/last lines of a file
 `head -123 filename` will print out the first 123 (or whatever number you specify) lines of the file `filename`. `tail -123 filename` will print the last 123 lines.  
 
-cat, echo, head, tail, less, nano
-; and ()
+##### `less`: scrolling file view
+Use `less file_name` to open a text file in a user-friendly viewer. This viewer allows you to scroll the text using the arrows and pgup/pgdn keys, as well as search for a pattern. To see the full list of options, type `h`. To exit, type `q`.
+
+##### `nano`: basic text editor
+Type `nano` to open the editor with a new, blank, file (you will be prompted for a name before saving), or `nano file_name` to edit an existing file. The editor is quite basic, but is good for making small changes or writing short scripts. Note that a list of the basic commands is at the bottom of the screen (with `^` indicating `ctrl` and `M` indicating `alt` or `option` on Macs).
 
 ### Standard Input and Output, Pipes and Redirection
 
+### ; and ()
 
 ### Searching for and Editing Patterns
 tr, sort, cut, grep, sed, 
