@@ -29,7 +29,7 @@ You can also specify a full path as an argument to `cd`. For example, if you ent
 ### Copying, Creating and Deleting Files and Directories
 To copy a file, use `cp source_file_name destination_name`.
 
-⚠️ Make sure the destination file doesn't exist, or you will overwrite it! ⚠️
+> ⚠️ Make sure the destination file doesn't exist, or you will overwrite it! ⚠️
 
 If the destination you specified is a directory, the file will be copied (with the same name) into that directory. If you want to copy a directory and all its contents, use the `-r` (recursive) option. For example: `cp -r my_docs_dir my_docs_backup_dir`.
 
