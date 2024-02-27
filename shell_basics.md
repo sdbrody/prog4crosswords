@@ -7,6 +7,13 @@ There are several varieties of shells (just like there are different web browser
 ### Ctrl-c
 If you run a command or program, and it misbehaves (e.g., is taking way too long, gets stuck in a loop, is dumping too much text to the screen), you can try to stop it by hitting the `ctrl-c` key combination. If this does not work, closing the shell window will usually kill any programs you ran from it.
 
+### Handy Shell Features
+You can use the arrow keys to scroll back to previous commands and edit them. This is useful when making similar commands with small changes, but be careful! Like copy/paste, it's easy to make unintentional errors when using this technique.
+
+You can also search backward through previous commands by typing `ctrl-r`, and then typing in part of the previous command you are looking for. Repeatedly entering `ctrl-r` will cycle backwards through all the commands containing what you typed.
+
+You can see a list of all your previous commands by typing `history`.
+
 ## File System Navigation
 As mentioned, one of the primary purposes of the shell is dealing with files, so our first step is to learn the commands that will help navigate the file system.
 
@@ -52,9 +59,6 @@ Since this is a tutorial for beginners, I will skip the topic of deleting files 
 
 ## Reading and Writing Text Files
 
-##### `cat`: print out text file(s)
-To print out text files, use the `cat` command followed by a list of the file names (or just a single file). `cat` is short for "contcatinate", since it will print out the contents of the files, in order, joined together.
-
 ##### `echo`: print a piece of text (string)
 The `echo` command, followed by a list of strings will simply print those words to the screen. Since some characters (e.g., **;**, **(**, **)**, **-**) have special meaning, as we will see in the next section, it's good practice to put your desired output inside double quotes. For example `echo "What's your name?"` will print correctly, whereas `echo What's your name?` will not.
 
@@ -72,8 +76,13 @@ Remember, if you don't get the behavior you expect and end up stuck, you can use
 
 > 📖 Further Reading: echo tutorials: [1](https://earthly.dev/blog/practical-guide-to-linux-echo-cmd/) [2](https://linuxhint.com/bash_echo/)
 
+##### `cat`: print out text file(s)
+To print out text files, use the `cat` command followed by a list of the file names (or just a single file). `cat` is short for "contcatinate", since it will print out the contents of the files, in order, joined together.
+
 ##### `head`/`tail`: print the first/last lines of a file
 `head -123 filename` will print out the first 123 (or whatever number you specify) lines of the file `filename`. `tail -123 filename` will print the last 123 lines.  
+
+> 📝 If you enter `cat` without a file, press `ctrl-d` to exit. The reason for this has to do with standard input, described below.
 
 ##### `less`: scrolling file view
 Use `less file_name` to open a text file in a user-friendly viewer. This viewer allows you to scroll the text using the arrows and pgup/pgdn keys, as well as search for a pattern. To see the full list of options, type `h`. To exit, type `q`.
@@ -82,6 +91,34 @@ Use `less file_name` to open a text file in a user-friendly viewer. This viewer 
 Type `nano` to open the editor with a new, blank, file (you will be prompted for a name before saving), or `nano file_name` to edit an existing file. The editor is quite basic, but is good for making small changes or writing short scripts. Note that a list of the basic commands is at the bottom of the screen (with `^` indicating `ctrl` and `M` indicating `alt` or `option` on Macs).
 
 ## Standard Input and Output, Pipes and Redirection
+
+When a program prints some text (for example, `echo` or `cat`), by default it goes to the shell's designated "standard output", which is the terminal display. However, BASH allows you to _redirect_ this output to a file, using the `>` sign. For example, entering `echo "hello world!" > test_file.txt` will create a file named "test_file.txt", and print "hello world!" into it. Nothing is printed to the screen .You can check out the file using `cat`, `less`, or `nano`, as described above.
+
+> ⚠️ Make sure the destination file doesn't exist, or you will overwrite it! ⚠️
+
+**Q.** What does `cat file1.txt > file2.txt` do?
+
+<details>
+  <summary>Click to reveal answer</summary>
+  
+  > **A.** The command copies file1.txt to file2.txt, similarly to using `cp`. Also similarly, if file2.txt already existed, it would be overwritten with the content of file1.txt.
+</details>
+
+
+To append to an existing file, used `>>`. For example, entering `echo "and this is the 2nd line" >> test_file.txt` will add the line to the file.
+
+All the programs for displaying text files listed above are designed to read from the shell's "standard input" source if no file is given as an argument. By default the standard input source is your keyboard, which leads to the strange behavior you might have seen if you typed `cat`, `head`, or `tail` without a file.
+
+This is not very useful in the default setting, but becomes very powerful with the use of **|**, known as the "pipe" symbol. Putting "|" after a program "pipes" its output to the next program, or to put it another way, redirects the first program's standard output to be the next one's standard input. You can chain multiple programs together like this for all kinds of handy functionality.
+
+**Q.** What does `cat my_long_file.txt | head -100 | tail -10 > result.txt` do?
+
+<details>
+  <summary>Click to reveal answer</summary>
+  
+  > **A.** The command copies lines 91 through 100 of my_long_file.txt into result.txt: `cat` prints the whole file, which gets piped to `head`, which prints only the first 100 lines, which get piped to `tail`, which prints the last 10 of those 100 lines (i.e., lines 91-100 of the original file), which get redirected into result.txt. 
+</details>
+
 
 ### ; and ()
 
