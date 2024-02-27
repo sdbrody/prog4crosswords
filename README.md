@@ -20,3 +20,9 @@ This is called the command-line prompt (because it prompts you to type in a comm
 > 📖 Further Reading: [customizing the command prompt](https://ioflood.com/blog/bash-prompt/)
 
 To check for Python, type `python3 --version` and press enter. If it prints out a version number, you are good to go.
+
+## Overview
+This tutorial is composed of three chapters:
+1. [The Basics of BASH](shell_basics.md): covers navigating the file system (`cd, ls`), creating, copying, and displaying files (`cp, mv, mkdir, echo, cat, head, tail, less, nano`), standard input/output, piping, and redirection (`>, >>, |`), and writing shell scripts. This chapter can be skipped by those familiar with BASH.
+2. [Text Search and Manipulation Tools](shell_text_manip.md): covers `tr, sort, cut, grep, sed`.
+3. [Python Basics for Crossword Construction](python_basics.md): covers basic concepts and gives examples for common tasks of interest to crossword constructors for theme development and wordlist management.
