@@ -20,9 +20,3 @@ This is called the command-line prompt (because it prompts you to type in a comm
 > 📖 Further Reading: [customizing the command prompt](https://ioflood.com/blog/bash-prompt/)
 
 To check for Python, type `python3 --version` and press enter. If it prints out a version number, you are good to go.
-
-## The Shell
-The "shell" is a "command-line" environment, meaning you can type in a command, followed by enter, to make things happen. It is mainly intended for managing files and directories (copying, renaming, creating, etc.) and for running programs. Modern computers have a graphical file managing app that does all that, but the shell is much more powerfull and flexible.
-
-There are several varieties of shells (just like there are different web browsers). This tutorial will be using BASH which is the default shell on most systems, and almost certainly on yours.
-
