@@ -1,3 +1,9 @@
+# The Basics of BASH (Bourne Again SHell)
+
+The "shell" is a "command-line" environment, meaning you can type in a command, followed by enter, to make things happen. It is mainly intended for managing files and directories (copying, renaming, creating, etc.) and for running programs. Modern computers have a graphical file managing app that does all that, but the shell is much more powerfull and flexible.
+
+There are several varieties of shells (just like there are different web browsers). This tutorial will be using BASH which is the default shell on most systems, and almost certainly on yours.
+
 ## File System Navigation
 As mentioned, one of the primary purposes of the shell is dealing with files, so our first step is to learn the commands that will help navigate the file system.
 
@@ -41,7 +47,7 @@ Since this is a tutorial for beginners, I will skip the topic of deleting files 
 
 > ⚠️ 📖 Further Reading: [rm and rmdir](https://www.hostinger.com/tutorials/how-to-remove-files-and-folders-using-linux-command-line) ⚠️
 
-### Reading and Writing Text Files
+## Reading and Writing Text Files
 
 ### Ctrl-c
 If you run a command or program, and it misbehaves (e.g., is taking way too long, gets stuck in a loop, is dumping too much text to the screen), you can try to stop it by hitting the `ctrl-c` key combination. If this does not work, closing the shell window will usually kill any programs you ran from it.
@@ -75,7 +81,7 @@ Use `less file_name` to open a text file in a user-friendly viewer. This viewer 
 ##### `nano`: basic text editor
 Type `nano` to open the editor with a new, blank, file (you will be prompted for a name before saving), or `nano file_name` to edit an existing file. The editor is quite basic, but is good for making small changes or writing short scripts. Note that a list of the basic commands is at the bottom of the screen (with `^` indicating `ctrl` and `M` indicating `alt` or `option` on Macs).
 
-### Standard Input and Output, Pipes and Redirection
+## Standard Input and Output, Pipes and Redirection
 
 ### ; and ()
 
