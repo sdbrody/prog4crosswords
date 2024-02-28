@@ -119,6 +119,20 @@ This is not very useful in the default setting, but becomes very powerful with t
   > **A.** The command copies lines 91 through 100 of my_long_file.txt into result.txt: `cat` prints the whole file, which gets piped to `head`, which prints only the first 100 lines, which get piped to `tail`, which prints the last 10 of those 100 lines (i.e., lines 91-100 of the original file), which get redirected into result.txt. 
 </details>
 
+> 📝 There is also a "standard error" output source to which errors are printed. By default that is your display. When you redirect program output using **|** or **>**, error messages are not redirected, and you will see them on your screen. This is usually desirable, since it prevents you missing errors that are written to a file. However, if you _do_ need to redirect error messages, instructions can be found in the "further reading" recommended below. 
 
-### ; and ()
+#### `tee`: print to display _and_ to file
+In many cases, especially when you are tweaking a script or verifing behavior, you want to see the program output on the screen, but also save it to a file. To do this, use `tee` (so called because it acts as a T-junction in the pipe). For example:
+`cat my_long_file.txt | head -200 | tee result.txt` will write the first 200 lines of my_long_file.txt to both the screen and result.txt.
+
+> 📖 Further Reading: [BASH piping and redirecting:](https://www.redhat.com/sysadmin/redirect-operators-bash)
+
+### Grouping Shell Commands
+Sometimes you want to set off a sequence of multiple shell commands without having to wait for each one to finish. You can do this by separating the commands with a semicolon (**;**). One handy example is to measure the time a long program takes. You can run the command `date; my_long_program; date`, which will print the date and time, then run your program, and then print the date right after your program completes.
+
+What if you wanted to capture the output of the previous example in a file? If you try to append `> filename.txt` to the previous command, it will only write the output of the last command in the sequence to your file, since each **;** is treated as strating a new command. To group together a bunch of commands for the purposes of capturing their combined output, place them in parantheses.
+For example: `(echo "Dear Sam," ; cat form_letter.txt) > letter_to_sam.txt` will print the personalized greeting "Dear Sam," followed by the contents of form_letter.txt into a new file named letter_to_sam.txt.
+
+### Writing Shell Scripts
+chmod +x
 
