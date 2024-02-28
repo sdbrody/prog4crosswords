@@ -122,5 +122,3 @@ This is not very useful in the default setting, but becomes very powerful with t
 
 ### ; and ()
 
-### Searching for and Editing Patterns
-tr, sort, cut, grep, sed, 
