@@ -36,7 +36,7 @@ You might find it useful to open it and compare what you see there with what you
 ### Moving Around
 You can move between directories by using the `cd` (change directory) command. For instance, if you have see a **Downloads** subdirectory when running `ls`, you can try `cd Downloads`. Notice how the last part of your prompt changes from `:~$` to `:~/Downloads$` to reflect your current location. 
 
-You can type `ls` again to list any files and subdirectories. To move one step back up the directory tree (i.e. to this directory's parent), use `cd ..`.
+You can type `ls` again to list any files and subdirectories. To move one step back up the directory tree (i.e. to this directory's parent), use `cd ..`. To refer to the current directory, you can use a single period `.`. `cd .` will change directories to the current one, essentially doing nothing, but the `.` shortcut will be useful in the future. 
 
 You can also specify a full path as an argument to `cd`. For example, if you entered the command `cd Downloads`, and then wanted to go to a different (sibling) subdirectory in your home directory named `Docs`, you could enter `cd ..` and then `cd Docs`, or `cd ../Docs` or `cd ~/Docs`.
 
@@ -134,5 +134,24 @@ What if you wanted to capture the output of the previous example in a file? If y
 For example: `(echo "Dear Sam," ; cat form_letter.txt) > letter_to_sam.txt` will print the personalized greeting "Dear Sam," followed by the contents of form_letter.txt into a new file named letter_to_sam.txt.
 
 ### Writing Shell Scripts
-chmod +x
+If you find yourself reusing specific sets of commands frequently, you can bundle them into a _shell script_ for convenience. Shell scripts are simply text files that contain the commands you want to run. By convention, they usually end in `.sh` instead of `.txt`.
+
+For example, you can run `nano lines91to100.sh` to create and edit a new file called `lines91to100.sh`. Then type in `head -100 | tail -10`, save, and close. You then need to run `chmod +x lines91to100.sh` to turn it into an **executable** file (meaning it can be run as a command). You now have your first shell script!
+
+You can use it like this: `cat my_long_file.txt | ./lines91to100.sh`
+
+> 📝 You must run the scripts using their full path. For scripts that are in your current directory, this means `./` followed by the file name. For scripts in a sub directory called `scripts`, it would be `./scripts/` followed by the file name.
+
+The previous script is very specific, always printing out lines 91-100. You can add more flexibility by using command line arguments. Inside BASH scripts, the arguments given when running the program are referrenced by `$1` `$2` etc. So if you wanted your script to be more flexible, you could create a new script `some_lines.sh` (or edit your old one) as follows: `head -$1 | tail -$2`. Remember to `chmod +x some_lines.sh`!!
+
+If you then run `cat my_long_file.txt | ./some_lines.sh 50 5` it will print out lines 46-50 of `my_long_file.txt`, if you run `cat my_long_file.txt | ./some_lines.sh 10 3` it will print out lines 8-10, and so on.
+
+You can also use the variables inside `echo` strings, for example, you can create a script named `personalized_letter.sh` that contains `(echo "Dear $1,"; cat form_letter.txt) > $2`. When you run `./personalized_letter.sh Sam sams_letter.txt`, it will print the form letter with the header "Dear Sam," to the file sams_letter.txt. 
+
+We've only scratched the surface of what you can do with BASH scripts. There are many tutorials available on the web, and I've listed a couple below. BASH is a full-powered programming language, and you can do almost anything with it, but you shouldn't! It is badly suited for complex logic or long programs. It should mostly be used only to automate short sets of repeated commands. If you find yourself writing a script that is more than 5 lines long, stop. You are almost certainly better off doing it in Python. 
+
+> 📖 Further Reading: [Deeper Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/), [Beginner to Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+
+
+
 
