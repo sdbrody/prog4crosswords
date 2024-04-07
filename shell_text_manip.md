@@ -24,7 +24,7 @@ You can also use the dash (`-`) to specify a range of letters. For example, `tr 
 
 In addition, `tr` can delete characters, using the `-d` argument. For example, `tr -d " "` will remove all spaces from the output, and `tr -d "aeiou"` will remove all (lower-case) vowels.
 
-> ⚠️ `tr` works on individual characters. `tr "hi" "yo"` will not replace "hi" with "yo", but instead will replace **all** h's with y's and all i's with o's! The same applies to deletion. ⚠️  
+> ⚠️ `tr` works on individual characters. `tr "hi" "yo"` will not replace "hi" with "yo", but instead will replace _all_ h's with y's and _all_ i's with o's! The same applies to deletion. ⚠️  
 
 > 📖 Further Reading
 
