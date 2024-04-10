@@ -26,7 +26,7 @@ In addition, `tr` can delete characters, using the `-d` argument. For example, `
 
 > ⚠️ `tr` works on individual characters. `tr "hi" "yo"` will not replace "hi" with "yo", but instead will replace _all_ h's with y's and _all_ i's with o's! The same applies to deletion. ⚠️  
 
-> 📖 Further Reading
+> 📖 Further Reading: you can find more examples and additional options you can use with `tr` [here](https://phoenixnap.com/kb/linux-tr).
 
 ## sort
 ## uniq
