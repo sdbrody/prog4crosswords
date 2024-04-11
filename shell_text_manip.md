@@ -2,8 +2,9 @@
 
 This chapter will discuss how to use the the features of BASH and its built-in tools to search through and modify text files. The focus will be on the use cases that come up when constructing crosswords. As in the previous chapter, I will not describe all of the options and possibilities of each tool, but will try to give useful pointers for further reading.
 
+## Basic Text Manipulation
 
-## Swapping and Deleting Characters with `tr`
+### Swapping and Deleting Characters with `tr`
 
 The `tr` command (short for "translate") allows you to replace one character with another throughout a file.
 
@@ -28,15 +29,17 @@ In addition, `tr` can delete characters, using the `-d` argument. For example, `
 
 > 📖 Further Reading: you can find more examples and additional options you can use with `tr` [here](https://phoenixnap.com/kb/linux-tr).
 
-## sort
-## uniq
-## cut
-## grep
-## sed
+### Handling Columns of Data with `cut`
 
+## Advanced Text Manipulation
+This section contains probably the two most powerful BASH tools in your arsenal, and the ones you will use most frequently.
+While the __further reading__ links in other sections were just recommendations, for this section you will want to read and experiment as much as possible. This tutorial will only be able to provide a few basic examples, and putting in the effort to master `grep` and `sed` is very much worthwhile.
+ 
+### Selecting Lines with `grep`
 
+### Changing Text with `sed`
 
+## Organizing Output
+### sort
+### uniq
 
-
-
-tr, sort, cut, grep, sed
