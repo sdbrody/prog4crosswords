@@ -31,6 +31,18 @@ In addition, `tr` can delete characters, using the `-d` argument. For example, `
 
 ### Handling Columns of Data with `cut`
 
+The `cut` command has several functionalities, but the one I've found most useful is to rearrange data that comes in columns (sometimes refered to as "fields"). The most common such formats are CSV (comma-separated-values) and TSV (tab-separated-values), supported by almost all spreadsheet software. For crossword constructors, the common wordlist format is also of interest. It is comprised of two or three columns, separated by a semi-colon. The first column is the word or phrase (without spaces), the second is the score, and sometimes a third column is added, containing a sample clue.
+
+`cut` allows you to specify the column separator (a.k.a. the "delimiter") via the `-d` argument, and to choose which column(s) you want to print out, and in what order, via the `-f` (for "fields") argument. You can also specify what to print between the columns in the output, using `--output-delimiter`.
+
+The fields argument are specified using a list of comma-separated column indexes. For example, `-f "2,1"` tells `cut` to print the 2nd column, then the 1st. You can also specify ranges with a dash, and combine them with indexes. For example, `-f "4,1-2,7"` will print the 4th, 1st, 2nd, and 7th columns, in that order. 
+
+To put it all together, if you had a wordlist and wanted to print the scores first, followed by a space, and then the word, you would use the command `cat my_wordlist.dict | cut -d ";" -f "2,1" --output-delimiter " "`.
+
+A few things to note:
+- by default, the input delimiter is assumed to be a tab, and the output delimiter is whatever the input one is.
+- it's good practice to surround the argument values with quotes, to avoid potential issues. For example, without the quotes, the semi-colon would be interpreted by BASH as starting a new command (see [Chapter 1](shell_basics.md)).
+
 ## Advanced Text Manipulation
 This section contains probably the two most powerful BASH tools in your arsenal, and the ones you will use most frequently.
 While the __further reading__ links in other sections were just recommendations, for this section you will want to read and experiment as much as possible. This tutorial will only be able to provide a few basic examples, and putting in the effort to master `grep` and `sed` is very much worthwhile.
