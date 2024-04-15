@@ -52,6 +52,15 @@ While the __further reading__ links in other sections were just recommendations,
 ### Changing Text with `sed`
 
 ## Organizing Output
-### sort
-### uniq
+### The `sort` Command 
+The `sort` command is used to sort lines in a file. By default, it sorts in case-sensitive alphabetically ascending order. When sorting numbers, use the `-n` argument (so that "10" with come after "2"). To sort in descending order, use the `-r` (for "reverse") argument. To ignore case, use the `-f` argument.
+
+Combining the all the above, you can find all the 10-letter entries in the wordlist containing the sequence "EYE", sort them in descending order of score, and print the top 10 with the following command:
+```
+cat my_wordlist.dict | grep "^.\{10\};" | grep "GEM" |  cut -d ";" -f "2,1" --output-delimiter " " | sort -r -n | head
+``` 
+
+### The `uniq` Command
+
+
 
