@@ -49,6 +49,22 @@ While the __further reading__ links in other sections were just recommendations,
  
 ### Selecting Lines with `grep`
 
+The `grep` command is used to search lines of text for a pattern of letters. The most simple patterns are exact matches. For example, running the command `cat my_wordlist.dict | grep "CAT"` will find all the entries in the wordlist (lines of text) that contain the sequence "CAT" in them, including "CATBURGLAR", "DOJACAT", "STAYCATION", and "CAT" itself.
+
+Some useful arguments for `grep`:
+
+- `-i` tells `grep` to ignore case, so `grep -i "CAT"`, `grep -i "cat"`, and `grep -i "cAt"` are equivalent, and will find any lines containing a "cat" regardless of whether the individual letters are upper or lower case (or a mixture).
+
+- `-v` inverts the logic, printing only the lines that _don't_ match the pattern. So if you wanted to create a custom wordlist to use in a puzzle that has no I's in it, you could issue the command `cat my_wordlist.dict | grep -v "I" > no_i_wordlist.dict`.
+
+- `-o` tells grep to only print the part of the line that matches the pattern, so `cat my_wordlist.dict | grep -o "CAT"` will print only the word "CAT" for every line containing that sequence (this option becomes more useful for complex patterns, as described below).
+
+
+
+
+
+
+
 ### Changing Text with `sed`
 
 ## Organizing Output
