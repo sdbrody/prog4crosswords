@@ -59,10 +59,23 @@ Some useful arguments for `grep`:
 
 - `-o` tells grep to only print the part of the line that matches the pattern, so `cat my_wordlist.dict | grep -o "CAT"` will print only the word "CAT" for every line containing that sequence (this option becomes more useful for complex patterns, as described below).
 
+#### Regular Expressions
+
+The main power of `grep` (and `sed`, below) is the ability to understand patterns in the form of a regular expression (a.k.a. regex or regexp). Regular expressions are a standard format for specifying letter patterns, and are supported by many different applications, web sites, programming languages, and even some search engines.
+
+There isn't room in this tutorial to go into all the features of regular expressions or the complex things that can be done with them. I will give some of the basics below, and I've included a bunch of useful scripts [here](shell_example_scripts.md). I strongly encourage you to take a look and try to understand them, and also explore and practice as much as possbile on your own.
+
+##### Period (`.`)
+The period is a wild card that stands in for any (single) letter. For example, to find all lines containing the sequence "ALT" in alternating letters, use `cat my_wordlist.dict | grep "A.L.T"`, which will give you "TABLET", "BALLET" and many more.
 
 
+- `^`, `$`
+- `[]`
+- `{}`
+- `*`, `+`, `?`
+  
 
-
+> ⚠️ Although the format of regular expressions is pretty standard, there are some small variations between different applications, sites, and programming languages. In particular, they may differ in whether special characters are treated literally by default and symbolicly when prefixed with a `\`, or vise versa. For examples, in some implementations, `+` will mean the plus character, and `\+` will mean "one or more repetitions of the previous character" (as above), and in some it will be the other way around. This can be frustrating when you first encounter it, and it may take some trial and error to figure out. ⚠️  
 
 
 ### Changing Text with `sed`
