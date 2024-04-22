@@ -61,14 +61,17 @@ Some useful arguments for `grep`:
 
 #### Regular Expressions
 
-The main power of `grep` (and `sed`, below) is the ability to understand patterns in the form of a regular expression (a.k.a. regex or regexp). Regular expressions are a standard format for specifying letter patterns, and are supported by many different applications, web sites, programming languages, and even some search engines.
+The main power of `grep` (and `sed`, below) is the ability to understand regular expressions (a.k.a. REs, regexs, or regexps). Regular expressions are a standard format for specifying letter patterns, and are supported by many applications, web sites, programming languages, and some search engines.
 
-There isn't room in this tutorial to go into all the features of regular expressions or the complex things that can be done with them. I will give some of the basics below, and I've included a bunch of useful scripts [here](shell_example_scripts.md). I strongly encourage you to take a look and try to understand them, and also explore and practice as much as possbile on your own.
+There isn't room in this tutorial to go into all the details of regular expressions or the complex things that can be done with them. I will give some of the basics below, and I've included a bunch of useful scripts [here](shell_example_scripts.md). I strongly encourage you to take a look and try to understand how they work, and also to explore and practice as much as possbile on your own.
 
 ##### Wild Card: `.`
-The period is a wild card that stands in for any (single) letter. For example, to find all lines containing the sequence "ALT" in alternating letters, use `cat my_wordlist.dict | grep "A.L.T"`, which will give you "TABLET", "BALLET" and many more.
+In REs, the period is a wild card that stands in for any single character (letter, number, symbol, space, etc). For example, to find all lines containing the sequence "ALT" in alternating letters, use `cat my_wordlist.dict | grep "A.L.T"`, which will give you "T**A**B**L**E**T**", "B**A**L**L**E**T**" and many more.
 
 ##### Start and End Markers: `^`, `$`
+The caret symbol (`^`) is used to mark the beginning of a line, and the dollar sign (`$`) to mark its end. So, for example, to find 6-letter words that start with B and are scored as 5, use `cat my_wordlist.dict |  grep "^B.....;5$"`. Note that if you didn't include the final "$", your command would also return lines that are scored 50 (or any score that starts with 5). If you didn't include the starting `^`, your command would return all entries that have B as the 6th-to-last character of the word, even if it isn't the first letter of the word. 
+
+> ⚠️ Remember that in standard wordlists, each line ends with a `;` and the score, so when using grep on a wordlist, you'll want to use `;` rather than `$` to indicate the end of the word. ⚠️  
 
 ##### "One-Of" Group: `[]`
 negation and range
