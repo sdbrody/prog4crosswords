@@ -78,7 +78,7 @@ Use square brackets (`[]`) to specify a group of characters, any of which can ap
 
 You can also specify character ranges in the brackets, using the dash (`-`). For example, `cat my_wordlist.dict | grep "^[S-V]...;[5-7].$"` will find all 4-letter entries in the wordlist that start with S, T, U, or V, and have two-digit scores where the first digit is 5, 6 or 7 (i.e., scores between 50 and 79).
 
-You can specify a group of characters to *exclude* by putting a caret (`^`) after the opening bracket. For example, `cat my_wordlist.dict | grep "^B[^AEIOU]G;[^1-4].$" will find all 3-letter entries in the wordlist that start with B, end in P, **do not** have a middle vowel, and have 2-character scores that **do not** start with 1, 2, 3, or 4 (i.e., scores of 50 or more). In my wordlist, this produces only the entry BMP. 
+You can specify a group of characters to *exclude* by putting a caret (`^`) after the opening bracket. For example, `cat my_wordlist.dict | grep "^B[^AEIOU]G;[^1-4].$"` will find all 3-letter entries in the wordlist that start with B, end in P, **do not** have a middle vowel, and have 2-character scores that **do not** start with 1, 2, 3, or 4 (i.e., scores of 50 or more). In my wordlist, this produces only the entry BMP. 
 
 > ⚠️ Do not confuse this caret with the one outside the bracket, which indicates the start of a line (see above). ⚠️
 
