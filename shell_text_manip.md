@@ -91,7 +91,7 @@ You can specify the desired number of repetitions of a character (or "one of" gr
 
 > ⚠️ Note the backslashes in the last 3 entries, but not for `*` or other symbols above. Although the format of regular expressions is pretty standard, there are some small variations between different applications, sites, and programming languages. In particular, they may differ in whether special characters are treated literally by default and symbolicly when prefixed with a `\`, or vise versa. For examples, in some implementations, `+` will mean the plus character, and `\+` will mean "one or more repetitions of the previous character" (as above), and in some it will be the other way around. This can be frustrating when you first encounter it, and it may take some trial and error to figure out. ⚠️  
 
-> 📖 Further Reading: (This site)[https://regex101.com/] lets you test your regular expressions as you create them, explaining what's going on as you type.
+> 📖 Further Reading: [This site](https://regex101.com/) lets you test your regular expressions as you create them, explaining what's going on as you type.
 
 ### Changing Text with `sed`
 
