@@ -35,9 +35,7 @@ The `cut` command has several functionalities, but the one I've found most usefu
 
 `cut` allows you to specify the column separator (a.k.a. the "delimiter") via the `-d` argument, and to choose which column(s) you want to print out, and in what order, via the `-f` (for "fields") argument. You can also specify what to print between the columns in the output, using `--output-delimiter`.
 
-The fields argument are specified using a list of comma-separated column indexes. For example, `-f "2,1"` tells `cut` to print the 2nd column, then the 1st. You can also specify ranges with a dash, and combine them with indexes. For example, `-f "4,1-2,7"` will print the 4th, 1st, 2nd, and 7th columns, in that order. 
-
-To put it all together, if you had a wordlist and wanted to print the scores first, followed by a space, and then the word, you would use the command `cat my_wordlist.dict | cut -d ";" -f "2,1" --output-delimiter " "`.
+The fields argument are specified using a list of comma-separated column indexes. For example, `-f "1,2"` tells `cut` to print the first and second columns. You can also specify ranges with a dash, and combine them with indexes. For example, `-f "1-4,7"` will print the 1st, 2nd, 3rd, 4th and 7th columns. 
 
 A few things to note:
 - by default, the input delimiter is assumed to be a tab, and the output delimiter is whatever the input one is.
